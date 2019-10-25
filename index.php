@@ -4,33 +4,15 @@ require_once('config.php');
 
 
 
-$sql = new Sql();
-
-$comandoSql = 'SELECT * FROM login';
-
-$login = $sql->select($comandoSql);
+$sql = new Usuario();
+$sql->loadById(1);
+$results = $sql->retornaloadById();
 
 
-
-echo '<pre><br>';
-echo json_encode($login).'<br>';
-echo '</pre>';
+echo json_encode($results);
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
- ?>
