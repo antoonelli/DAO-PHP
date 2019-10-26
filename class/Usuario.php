@@ -42,6 +42,16 @@ class Usuario{
 
 		}
 	}
+
+	public static function getList(){
+		$sql = new Sql();
+
+		 $resultado = $sql->select("SELECT * FROM login ORDER BY login");
+
+		 foreach ($resultado as $key => $value) {
+		 	echo 'id: ' . $value['id'] . ' Nome: ' . $value['login'] . ' senha: ' . $value['senha'] . '<br>';
+		 }
+	}
 	public function retornaloadById(){
 
 		return json_encode(array(
