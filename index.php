@@ -11,11 +11,9 @@ $results = $sql->retornaloadById();
 */
 //echo json_encode($results);
 
+		
 
+	 	 Usuario::search('jo'); 
 
+?>
 
-
-
-
-
-Usuario::getList();

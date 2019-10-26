@@ -42,6 +42,18 @@ class Usuario{
 
 		}
 	}
+	public static function search($login){
+		$sql = new Sql();
+
+		 $results = $sql->select("SELECT * FROM login WHERE login LIKE :SEARCH ORDER BY login", array(
+		 	':SEARCH'=>"%".$login."%" 
+		 ));
+		 foreach ($results as $key => $value) {
+		 	echo 'id: ' . $value['id'] . ' Nome: ' . $value['login'] . ' senha: ' . $value['senha'] . '<br>';
+		 }
+
+
+	}
 
 	public static function getList(){
 		$sql = new Sql();
